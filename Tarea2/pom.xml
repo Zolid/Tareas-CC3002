@@ -5,4 +5,15 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>Tarea2</name>
   <description>Tarea 2 del curso de metodologias</description>
+  <dependencies>
+  	
+
+	<dependency>
+  		<groupId>com.beust</groupId>
+  		<artifactId>jcommander</artifactId>
+  		<version>1.69</version>
+	</dependency>
+
+  	
+  </dependencies>
 </project>
