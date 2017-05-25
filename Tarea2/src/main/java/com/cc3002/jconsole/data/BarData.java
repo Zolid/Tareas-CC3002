@@ -1,6 +1,10 @@
-package com.cc3002.plot.logic;
+package com.cc3002.jconsole.data;
 
 import java.util.List;
+
+import com.cc3002.jconsole.logic.ConvertsLists;
+import com.cc3002.jconsole.logic.OrderValues;
+import com.cc3002.jconsole.logic.TruncateShafts;
 
 /**
  * La Clase BarData es una subclase de la 

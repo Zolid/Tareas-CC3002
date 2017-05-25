@@ -1,6 +1,6 @@
-package com.cc3002.plot.logic;
+package com.cc3002.jconsole.plot;
 
-
+import com.cc3002.jconsole.data.IProcesingData;
 
 /**
  * La Clase Graph es una clase abstracta

@@ -1,4 +1,4 @@
-package com.cc3002.plot.logic;
+package com.cc3002.jconsole.logic;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +18,7 @@ public class ConvertsLists {
 	 * @param stringList la string list a transformar
 	 * @return una lista de Integer.
 	 */
-	static List<Integer> stringListToIntegerList(List<String> stringList) {
+	public static List<Integer> stringListToIntegerList(List<String> stringList) {
 		List<Integer> integerList = new ArrayList<Integer>();
 		for (String value: stringList) {
 			integerList.add(Integer.parseInt(value));
@@ -33,7 +33,7 @@ public class ConvertsLists {
 	 * @param integerList la integer list a transformar.
 	 * @return una lista de String.
 	 */
-	static List<String> integerListToStringList(List<Integer> integerList) {
+	public static List<String> integerListToStringList(List<Integer> integerList) {
 		List<String> stringList = new ArrayList<String>();
 		for (Integer value: integerList) {
 			stringList.add(String.valueOf(value));

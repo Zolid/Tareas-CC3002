@@ -1,4 +1,4 @@
-package com.cc3002.plot.logic;
+package com.cc3002.jconsole.logic;
 
 import java.util.Collections;
 import java.util.List;
@@ -16,7 +16,7 @@ public class OrderValues {
 	 * @param list la lista a ordenar
 	 * @return una lista ordenada.
 	 */
-	static List<String> orderStringList(List<String> list) {
+	public static List<String> orderStringList(List<String> list) {
 		Collections.sort(list);
 		return list;
 	}
@@ -42,7 +42,7 @@ public class OrderValues {
 	 * @param list la lista a ordenar
 	 * @return una lista ordenada.
 	 */
-	static List<Integer> orderIntegerList(List<Integer> list) {
+	public static List<Integer> orderIntegerList(List<Integer> list) {
 		Collections.sort(list);
 		return list;
 	}
@@ -55,7 +55,7 @@ public class OrderValues {
 	 * @param list the list
 	 * @return the list
 	 */
-	static List<Integer> reverseOrderIntegerList(List<Integer> list) {
+	public static List<Integer> reverseOrderIntegerList(List<Integer> list) {
 		Collections.sort(list, Collections.reverseOrder());
 		return list;
 	}

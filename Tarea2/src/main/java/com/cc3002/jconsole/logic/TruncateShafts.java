@@ -1,4 +1,4 @@
-package com.cc3002.plot.logic;
+package com.cc3002.jconsole.logic;
 
 import java.util.ArrayList;
 import java.util.List;

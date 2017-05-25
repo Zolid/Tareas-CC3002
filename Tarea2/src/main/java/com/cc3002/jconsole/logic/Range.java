@@ -1,4 +1,4 @@
-package com.cc3002.plot.logic;
+package com.cc3002.jconsole.logic;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -12,7 +12,7 @@ import java.util.NoSuchElementException;
  * encuentran en un ArrayList
  * Object
  */
-class Range implements Iterable<Integer> {
+public class Range implements Iterable<Integer> {
 
 	/** The limit. */
 	private int limit;

@@ -1,4 +1,4 @@
-package com.cc3002.plot.logic;
+package com.cc3002.jconsole.parsing;
 
 import java.io.FileNotFoundException;
 import java.util.Collections;
@@ -8,6 +8,12 @@ import com.beust.jcommander.JCommander;
 import com.beust.jcommander.Parameter;
 import com.beust.jcommander.ParameterException;
 import com.beust.jcommander.converters.IParameterSplitter;
+import com.cc3002.jconsole.data.BarData;
+import com.cc3002.jconsole.data.IProcesingData;
+import com.cc3002.jconsole.data.ScatterData;
+import com.cc3002.jconsole.plot.BarPlot;
+import com.cc3002.jconsole.plot.Graph;
+import com.cc3002.jconsole.plot.ScatterPlot;
 
 
 

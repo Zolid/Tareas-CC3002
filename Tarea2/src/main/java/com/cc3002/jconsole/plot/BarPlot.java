@@ -1,6 +1,8 @@
-package com.cc3002.plot.logic;
+package com.cc3002.jconsole.plot;
 
 import java.util.List;
+
+import com.cc3002.jconsole.data.IProcesingData;
 
 /**
  * La Clase BarPlot encargada de plotear un grafico 
