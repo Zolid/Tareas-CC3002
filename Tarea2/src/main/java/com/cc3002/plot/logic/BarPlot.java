@@ -59,14 +59,16 @@ E,70
 		list.add("D,21");
 		list.add("E,70");
 		IProcesingData d = new BarData();
-		IProcesingData d2 = new BarData();
+		//IProcesingData d2 = new BarData();
 		Graph g = new BarPlot(d, "/home/zolid/Desktop/metodologias/plot.txt");
 		System.out.println(g.plot());
-		Graph g2 = new BarPlot(d2, list);
+		g.acotateY(50);
+		System.out.println(g.plot());
+		/*Graph g2 = new BarPlot(d2, list);
 		System.out.println(g2.plot());
 		System.out.println("");
 		System.out.println(d2.getAxisX().toString());
-		System.out.println(d2.getAxisY().toString());
+		System.out.println(d2.getAxisY().toString());*/
 	}
 
 }

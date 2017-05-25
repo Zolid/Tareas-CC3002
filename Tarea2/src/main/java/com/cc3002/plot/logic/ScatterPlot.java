@@ -60,4 +60,12 @@ public class ScatterPlot extends Graph {
 		}
 
 	}
+	
+	
+	static public void main(String[] agrs) {
+		IProcesingData d = new ScatterData();
+		Graph scatter = new ScatterPlot(d, "/home/zolid/Desktop/metodologias/s.txt");
+		scatter.acotateY(80);
+		System.out.println(scatter.plot());
+	}
 }

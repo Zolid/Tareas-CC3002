@@ -85,6 +85,24 @@ public abstract class Graph {
 		fillGraph();
 		return toString();
 	}
+	
+	public void acotateY(int num) {
+		getData().acotateY(num);
+		setMatrix(getData().getAxisY().size()+2,getData().getAxisX().size()*2+
+				getData().getAxisY().get(0).length()+1);
+	}
+	
+	public void acotateX(int num) {
+		getData().acotateX(num);
+		setMatrix(getData().getAxisY().size()+2,getData().getAxisX().size()*2+
+				getData().getAxisY().get(0).length()+1);
+	}
+	
+	public void acotateXY(int x, int y) {
+		getData().acotateXY(x, y);
+		setMatrix(getData().getAxisY().size()+2,getData().getAxisX().size()*2+
+				getData().getAxisY().get(0).length()+1);
+	}
 
 
 

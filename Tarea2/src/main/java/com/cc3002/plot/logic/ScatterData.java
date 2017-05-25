@@ -15,7 +15,6 @@ public class ScatterData extends ProcesingData {
 		List<Integer> axisY = ConvertsLists.stringListToIntegerList(getAxisY());
 		axisX = OrderValues.orderIntegerList(axisX);
 		axisY = OrderValues.reverseOrderIntegerList(axisY);
-		//axisY = TruncateShafts.truncate(axisY, axisY.get(axisY.size()-1));
 		List<String> listX = ConvertsLists.integerListToStringList(axisX);
 		List<String> listY = ConvertsLists.integerListToStringList(axisY);
 		setAxisX(listX);

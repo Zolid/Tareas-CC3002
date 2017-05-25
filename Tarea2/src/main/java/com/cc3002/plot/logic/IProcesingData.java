@@ -15,5 +15,11 @@ public interface IProcesingData {
 	List<String> getAxisY();
 
 	String getValue(String key);
+	
+	void acotateX(int num);
+	
+	void acotateY(int num);
+	
+	void acotateXY(int x, int y);
 
 }

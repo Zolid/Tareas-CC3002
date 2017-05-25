@@ -9,6 +9,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javafx.scene.chart.Axis;
+
 public abstract class ProcesingData implements IProcesingData{
 
 	private List<String> axisX;
@@ -68,11 +70,38 @@ public abstract class ProcesingData implements IProcesingData{
 		}
 
 	}
+	
+	public void acotateX(int num) {
+		List<Integer> axisX = ConvertsLists.stringListToIntegerList(getAxisX());
+		axisX = Range.range(axisX.get(0), num, 1);
+		List<String> listX = ConvertsLists.integerListToStringList(axisX);
+		setAxisX(listX);
+	}
+	
+	public void acotateY(int num) {
+		List<Integer> axisY = ConvertsLists.stringListToIntegerList(getAxisY());
+		axisY = OrderValues.orderIntegerList(axisY);
+		axisY = Range.range(axisY.get(0), num, 1);
+		axisY = OrderValues.reverseOrderIntegerList(axisY);
+		List<String> listY = ConvertsLists.integerListToStringList(axisY);
+		setAxisY(listY);
+	}
+	
+	public void acotateXY(int x, int y) {
+		acotateY(y);
+		acotateX(x);
+	}
 
 	public abstract void order();
 
 
-
+	static public void main(String[] agrs) {
+		IProcesingData b = new BarData();
+		b.readFile("/home/zolid/Desktop/metodologias/plot.txt");
+		b.order();
+		b.acotateY(80);
+		System.out.println(b.getAxisY().toString());
+	}
 
 
 
