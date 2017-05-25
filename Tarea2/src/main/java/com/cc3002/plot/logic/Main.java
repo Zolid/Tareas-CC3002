@@ -10,30 +10,56 @@ import com.beust.jcommander.ParameterException;
 import com.beust.jcommander.converters.IParameterSplitter;
 
 
+
+/**
+ * La Clase Main esta encargada de realizar el parsing
+ * para los datos ingresados por linea de comandos, y responder
+ * el ploteo correspondiente de cada tipo de grafico para los 
+ * datos ingresados.
+ */
 public class Main {
 	
+	/**
+	 * The Class NonSplittingSpliter.
+	 */
 	private static final class NonSplittingSpliter implements IParameterSplitter {
+        
+        /* (non-Javadoc)
+         * @see com.beust.jcommander.converters.IParameterSplitter#split(java.lang.String)
+         */
         public List<String> split(String value) {
             return Collections.singletonList(value);
         }
     }
 	
+	/** El tipo de grafico. */
 	@Parameter(description="graphs")
 	private static List<String> graph;
 
+	/** Comando para el path de un archivo. */
 	@Parameter(names={"-F"}, help=true)
 	private String path ="";
 	
+	/** Lista para almacenar las tuplas de datos. */
 	@Parameter(names={"-P"},splitter = NonSplittingSpliter.class, variableArity = true)
 	private List<String> tuples = Collections.emptyList();
 	
+	/** Comando para acotar los datos del eje X */
 	@Parameter(names={"-x"})
 	int x = 0;
 	
+	/** Comando para acotar los datos del eje Y. */
 	@Parameter(names={"-y"})
 	int y = 0;
 	
 
+	/**
+	 * The main method.
+	 *
+	 * @param argv the arguments
+	 * @throws ParameterException the parameter exception
+	 * @throws FileNotFoundException the file not found exception
+	 */
 	public static void main(String ... argv) throws ParameterException, FileNotFoundException  {
 		try {
 			Main main = new Main();
@@ -52,12 +78,16 @@ public class Main {
 			System.out.println("Por ejemplo:");
 			System.out.println("BarPlot -F ruta/del/los/datos");
 			System.out.println("ScatterPlot -P 3,2 4,5 7,9");
-		} //catch (IndexOutOfBoundsException e) {
+		} catch (IndexOutOfBoundsException e) {
 			//System.out.println("Datos mal ingresados!!!");
-		//}
+		}
 		
 	}
 
+	/**
+	 * Metodo bar para plotear un grafico tipo BarPlot, cuando
+	 * se ingresa el comando BarPlot.
+	 */
 	public void bar() {
 		IProcesingData data = new BarData();
 		if (!tuples.isEmpty()) {
@@ -90,6 +120,10 @@ public class Main {
 		}
 	}
 	
+	/**
+	 * Metodo scatter para plotear un grafico tipo ScatterPlot, cuando
+	 * se ingresa el comando ScatterPlot.
+	 */
 	public void scatter() {
 		IProcesingData data = new ScatterData();
 		if (!tuples.isEmpty()) {

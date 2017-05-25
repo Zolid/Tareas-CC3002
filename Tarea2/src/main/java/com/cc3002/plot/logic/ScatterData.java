@@ -1,14 +1,29 @@
 package com.cc3002.plot.logic;
 
-import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ * La Clase ScatterData es una subclase de la 
+ * ProcesingData y realiza las operaciones 
+ * de procesamiento especificos para los datos
+ * de un grafico tipo ScatterPlot.
+ */
 public class ScatterData extends ProcesingData {
 
+	/**
+	 * Crea una nueva instancia del objeto ScatterData.
+	 */
 	public ScatterData() {
 		super();
 	}
 
+	/**
+	 * Este metodo se encarga de ordena los las variables
+	 * de instancia del objeto (ordena ascendentemente los
+	 * datos del eje x y descendentemente los datos del y), 
+	 * y los setea al objeto.
+	 */
 	@Override
 	public void order() {
 		List<Integer> axisX = ConvertsLists.stringListToIntegerList(getAxisX());
@@ -20,28 +35,4 @@ public class ScatterData extends ProcesingData {
 		setAxisX(listX);
 		setAxisY(listY);
 	}
-
-	public static void main(String[] agrs) {
-		IProcesingData data = new ScatterData();
-		data.readFile("/home/zolid/Desktop/metodologias/s.txt");
-		data.order();
-		System.out.println(data.getAxisX().toString());
-		System.out.println(data.getAxisY().toString());
-
-		System.out.println("");
-
-		List<String> list = new ArrayList<String>();
-		list.add("3,4");
-		list.add("2,1");
-		list.add("1,0");
-		list.add("10,60");
-
-		IProcesingData data2 = new ScatterData();
-		data2.readTuple(list);
-		data2.order();
-		System.out.println(data2.getAxisX().toString());
-		System.out.println(data2.getAxisY().toString());
-
-	}
-
 }

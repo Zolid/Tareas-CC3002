@@ -2,8 +2,19 @@ package com.cc3002.plot.logic;
 
 import java.util.List;
 
+/**
+ * La Clase BarPlot encargada de plotear un grafico 
+ * tipo BarPlot.
+ */
 public class ScatterPlot extends Graph {
 
+	/**
+	 * Realiza una instancia de tipo ScatterPlot, 
+	 * obteniendo los datos un archivo.
+	 *
+	 * @param data los datos
+	 * @param path la ruta del archivo
+	 */
 	public ScatterPlot(IProcesingData data, String path) {
 		super(data);
 		getData().readFile(path);
@@ -12,6 +23,13 @@ public class ScatterPlot extends Graph {
 				getData().getAxisY().get(0).length()+2);
 	}
 	
+	/**
+	 * Realiza una instancia tipo ScatterPlot,
+	 * obteniendo los datos de una lista de tuplas.
+	 *
+	 * @param data los datos
+	 * @param tuples lista de tuplas
+	 */
 	public ScatterPlot(IProcesingData data, List<String> tuples) {
 		super(data);
 		getData().readTuple(tuples);
@@ -21,6 +39,9 @@ public class ScatterPlot extends Graph {
 	}
 
 
+	/**
+	 * Llena los datos del eje X.
+	 */
 	@Override
 	public void fillAxisX() {
 		int num = getData().getAxisY().get(0).length()+2;
@@ -45,6 +66,10 @@ public class ScatterPlot extends Graph {
 
 	}
 
+	/**
+	 * Llena la concentracion de los datos del grafico
+	 * del tipo ScatterPlot .
+	 */
 	@Override
 	void fillGraph() {
 		int num = getData().getAxisY().get(0).length()+2;
@@ -61,11 +86,4 @@ public class ScatterPlot extends Graph {
 
 	}
 	
-	
-	static public void main(String[] agrs) {
-		IProcesingData d = new ScatterData();
-		Graph scatter = new ScatterPlot(d, "/home/zolid/Desktop/metodologias/s.txt");
-		scatter.acotateY(80);
-		System.out.println(scatter.plot());
-	}
 }

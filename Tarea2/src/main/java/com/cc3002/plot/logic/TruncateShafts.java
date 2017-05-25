@@ -3,10 +3,22 @@ package com.cc3002.plot.logic;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ * The Class TruncateShafts.
+ */
 public class TruncateShafts {
   
+  /** The digits. */
   private static Integer digits = 1;
    
+  /**
+   * Truncate.
+   *
+   * @param list the list
+   * @param num the num
+   * @return the list
+   */
   static public List<Integer> truncate(List<Integer> list, Integer num) {
     List<Integer> newList = new ArrayList<Integer>();
     if (list.get(0).toString().length() > 1 && list.get(list.size()-1).toString().length() > 1){
@@ -20,6 +32,11 @@ public class TruncateShafts {
     return newList;
   }
   
+  /**
+   * The main method.
+   *
+   * @param agrs the arguments
+   */
   static public void main(String[] agrs) {
 	  List<Integer> list = new ArrayList<Integer>();
 	  for (int i= 10; i < 100; i+=10) {

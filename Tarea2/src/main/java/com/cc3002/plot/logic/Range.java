@@ -5,14 +5,32 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.NoSuchElementException;
 
+// TODO: Auto-generated Javadoc
+/**
+ * La Clase Range se encargar de 
+ * distribuir los datos que se 
+ * encuentran en un ArrayList
+ * Object
+ */
 class Range implements Iterable<Integer> {
 
+	/** The limit. */
 	private int limit;
 
+	/**
+	 * Realiza una nueva instancia de Range.
+	 *
+	 * @param limit the limit
+	 */
 	public Range(int limit) {
 		this.limit = limit;
 	}
 
+	/**
+	 * Metodo iterator que es pedido por
+	 * la interface Iterable para iterar 
+	 * datos sobre un ArrayList Object.
+	 */
 	public Iterator<Integer> iterator() {
 		final int max = limit;
 		return new Iterator<Integer>() {
@@ -37,6 +55,17 @@ class Range implements Iterable<Integer> {
 		};
 	}
 
+	/**
+	 * Este metodo realiza la distribucion de datos
+	 * empezando por start, donde las separacion 
+	 * de los datos es por step, y el final de los datos
+	 * estan acotados por end
+	 *
+	 * @param start el inicio
+	 * @param end el fin
+	 * @param step el paso
+	 * @return the list
+	 */
 	static public List<Integer> range(int start, int end, int step) {
 		int n = (int) Math.ceil((end-start)/(double)step);
 		List<Integer> arange = new ArrayList<Integer>();

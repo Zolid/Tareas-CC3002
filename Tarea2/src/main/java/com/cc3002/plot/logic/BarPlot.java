@@ -1,10 +1,20 @@
 package com.cc3002.plot.logic;
 
-import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * La Clase BarPlot encargada de plotear un grafico 
+ * tipo BarPlot.
+ */
 public class BarPlot extends Graph {
 
+	/**
+	 * Realiza una instancia de tipo BarPlot, 
+	 * obteniendo los datos un archivo.
+	 *
+	 * @param data los datos
+	 * @param path la ruta del archivo
+	 */
 	public BarPlot(IProcesingData data, String path) {
 		super(data);
 		getData().readFile(path);
@@ -13,6 +23,13 @@ public class BarPlot extends Graph {
 				getData().getAxisY().get(0).length()+1);
 	}
 
+	/**
+	 * Realiza una instancia tipo BarPlot,
+	 * obteniendo los datos de una lista de tuplas.
+	 *
+	 * @param data los datos
+	 * @param tuples lista de tuplas
+	 */
 	public BarPlot(IProcesingData data, List<String> tuples) {
 		super(data);
 		getData().readTuple(tuples);
@@ -21,6 +38,9 @@ public class BarPlot extends Graph {
 				getData().getAxisY().get(0).length()+1);
 	}
 
+	/**
+	 * Llena los datos del eje X.
+	 */
 	public void fillAxisX() {
 		int num = getData().getAxisY().get(0).length()+2;
 		int cnt = 0;
@@ -30,6 +50,10 @@ public class BarPlot extends Graph {
 		}
 	}
 
+	/**
+	 * Llena la concentracion de los datos del grafico
+	 * del tipo BarPlot .
+	 */
 	public void fillGraph() {
 		int num = getData().getAxisY().get(0).length()+2;
 		int cnt = 0;
@@ -42,33 +66,6 @@ public class BarPlot extends Graph {
 			}
 			cnt=0;
 		}
-	}
-
-	static public void main(String[] agrs) {
-		/**
-		 * B,90
-A,61
-C,50
-D,21
-E,70
-		 */
-		List<String> list = new ArrayList<String>();
-		list.add("B,90");
-		list.add("A,61");
-		list.add("C,50");
-		list.add("D,21");
-		list.add("E,70");
-		IProcesingData d = new BarData();
-		//IProcesingData d2 = new BarData();
-		Graph g = new BarPlot(d, "/home/zolid/Desktop/metodologias/plot.txt");
-		System.out.println(g.plot());
-		g.acotateY(50);
-		System.out.println(g.plot());
-		/*Graph g2 = new BarPlot(d2, list);
-		System.out.println(g2.plot());
-		System.out.println("");
-		System.out.println(d2.getAxisX().toString());
-		System.out.println(d2.getAxisY().toString());*/
 	}
 
 }
