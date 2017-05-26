@@ -8,7 +8,7 @@ import com.cc3002.jconsole.data.IProcesingData;
  * La Clase BarPlot encargada de plotear un grafico 
  * tipo BarPlot.
  */
-public class BarPlot extends Graph {
+public class BarPlot extends GraphPlot {
 
 	/**
 	 * Realiza una instancia de tipo BarPlot, 

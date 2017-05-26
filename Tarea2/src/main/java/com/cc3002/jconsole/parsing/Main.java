@@ -12,7 +12,7 @@ import com.cc3002.jconsole.data.BarData;
 import com.cc3002.jconsole.data.IProcesingData;
 import com.cc3002.jconsole.data.ScatterData;
 import com.cc3002.jconsole.plot.BarPlot;
-import com.cc3002.jconsole.plot.Graph;
+import com.cc3002.jconsole.plot.IGraphPlot;
 import com.cc3002.jconsole.plot.ScatterPlot;
 
 
@@ -101,11 +101,11 @@ public class Main {
 				System.out.println("Las categorías no números, por tanto, no se pueden acotar");
 			}
 			else if (y != 0) {
-				Graph g = new BarPlot(data, tuples);
+				IGraphPlot g = new BarPlot(data, tuples);
 				g.acotateY(y);
 				System.out.println(g.plot());
 			} else {
-				Graph g = new BarPlot(data, tuples);
+				IGraphPlot g = new BarPlot(data, tuples);
 				System.out.println(g.plot());
 			}
 		}
@@ -114,11 +114,11 @@ public class Main {
 				System.out.println("Las categorías no números, por tanto, no se pueden acotar");
 			}
 			else if (y != 0) {
-				Graph g = new BarPlot(data, path);
+				IGraphPlot g = new BarPlot(data, path);
 				g.acotateY(y);
 				System.out.println(g.plot());
 			} else {
-				Graph g = new BarPlot(data, path);
+				IGraphPlot g = new BarPlot(data, path);
 				System.out.println(g.plot());
 			}
 		} else {
@@ -134,42 +134,42 @@ public class Main {
 		IProcesingData data = new ScatterData();
 		if (!tuples.isEmpty()) {
 			if (x != 0) {
-				Graph g = new ScatterPlot(data, tuples);
+				IGraphPlot g = new ScatterPlot(data, tuples);
 				g.acotateX(x);
 				System.out.println(g.plot());
 			}
 			else if (y != 0) {
-				Graph g = new ScatterPlot(data, tuples);
+				IGraphPlot g = new ScatterPlot(data, tuples);
 				g.acotateY(y);
 				System.out.println(g.plot());
 			}
 			else if (x != 0 && y != 0) {
-				Graph g = new ScatterPlot(data, tuples);
+				IGraphPlot g = new ScatterPlot(data, tuples);
 				g.acotateXY(x, y);
 				System.out.println(g.plot());
 			} else {
-				Graph g = new ScatterPlot(data, tuples);
+				IGraphPlot g = new ScatterPlot(data, tuples);
 				System.out.println(g.plot());
 			}
 			
 		}
 		else if(!path.equals("")) {
 			if (x != 0) {
-				Graph g = new ScatterPlot(data, path);
+				IGraphPlot g = new ScatterPlot(data, path);
 				g.acotateX(x);
 				System.out.println(g.plot());
 			}
 			else if (y != 0) {
-				Graph g = new ScatterPlot(data, path);
+				IGraphPlot g = new ScatterPlot(data, path);
 				g.acotateY(y);
 				System.out.println(g.plot());
 			}
 			else if (x != 0 && y != 0) {
-				Graph g = new ScatterPlot(data, path);
+				IGraphPlot g = new ScatterPlot(data, path);
 				g.acotateXY(x, y);
 				System.out.println(g.plot());
 			} else {
-				Graph g = new ScatterPlot(data, path);
+				IGraphPlot g = new ScatterPlot(data, path);
 				System.out.println(g.plot());
 			}
 		} else {

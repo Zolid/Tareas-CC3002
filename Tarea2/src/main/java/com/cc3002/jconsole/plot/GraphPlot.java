@@ -7,7 +7,7 @@ import com.cc3002.jconsole.data.IProcesingData;
  * que implementa los metodos generales
  * para plotear los distintos de graficos.
  */
-public abstract class Graph {
+public abstract class GraphPlot implements IGraphPlot{
 
 	/** Matriz que construye el grafico */
 	private char[][] matrix;
@@ -23,7 +23,7 @@ public abstract class Graph {
 	 *
 	 * @param data los datos
 	 */
-	public Graph(IProcesingData data) {
+	public GraphPlot(IProcesingData data) {
 		this.data =  data;
 		this.stream = new StringBuilder();
 
