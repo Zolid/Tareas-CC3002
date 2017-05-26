@@ -32,19 +32,4 @@ public class TruncateShafts {
     return newList;
   }
   
-  /**
-   * The main method.
-   *
-   * @param agrs the arguments
-   */
-  static public void main(String[] agrs) {
-	  List<Integer> list = new ArrayList<Integer>();
-	  for (int i= 10; i < 100; i+=10) {
-		  list.add(i);
-	  }
-	  list = TruncateShafts.truncate(list, 100);
-	  list = TruncateShafts.truncate(list, 80);
-	  System.out.println(list.toString());
-  }
-  
 }

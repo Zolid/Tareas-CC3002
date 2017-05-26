@@ -29,7 +29,7 @@ public class OrderValues {
 	 * @param list la lista a ordenar
 	 * @return una lista ordenada descentemente.
 	 */
-	static List<String> reverseOrderStringList(List<String> list) {
+	public static List<String> reverseOrderStringList(List<String> list) {
 		Collections.sort(list, Collections.reverseOrder());
 		return list;
 	}

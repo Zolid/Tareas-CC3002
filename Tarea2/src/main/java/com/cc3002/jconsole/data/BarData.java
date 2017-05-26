@@ -1,5 +1,6 @@
 package com.cc3002.jconsole.data;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.cc3002.jconsole.logic.ConvertsLists;
@@ -36,4 +37,6 @@ public class BarData extends ProcesingData {
 		List<String> listY = ConvertsLists.integerListToStringList(axisY);
 		setAxisY(listY);
 	}
+	
+
 }

@@ -98,7 +98,7 @@ public class Main {
 		IProcesingData data = new BarData();
 		if (!tuples.isEmpty()) {
 			if (x != 0) {
-				System.out.println("Las categorías no números, por tanto, no se pueden acotar");
+				System.out.println("Las categorías no son números, por tanto, no se pueden acotar");
 			}
 			else if (y != 0) {
 				IGraphPlot g = new BarPlot(data, tuples);
@@ -111,7 +111,7 @@ public class Main {
 		}
 		else if(!path.equals("")) {
 			if (x != 0) {
-				System.out.println("Las categorías no números, por tanto, no se pueden acotar");
+				System.out.println("Las categorías no son números, por tanto, no se pueden acotar");
 			}
 			else if (y != 0) {
 				IGraphPlot g = new BarPlot(data, path);

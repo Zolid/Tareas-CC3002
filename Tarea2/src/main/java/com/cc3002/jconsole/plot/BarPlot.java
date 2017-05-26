@@ -69,5 +69,7 @@ public class BarPlot extends GraphPlot {
 			cnt=0;
 		}
 	}
+	
+	
 
 }

@@ -5,55 +5,13 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-// TODO: Auto-generated Javadoc
 /**
  * La Clase Range se encargar de 
  * distribuir los datos que se 
  * encuentran en un ArrayList
  * Object
  */
-public class Range implements Iterable<Integer> {
-
-	/** The limit. */
-	private int limit;
-
-	/**
-	 * Realiza una nueva instancia de Range.
-	 *
-	 * @param limit the limit
-	 */
-	public Range(int limit) {
-		this.limit = limit;
-	}
-
-	/**
-	 * Metodo iterator que es pedido por
-	 * la interface Iterable para iterar 
-	 * datos sobre un ArrayList Object.
-	 */
-	public Iterator<Integer> iterator() {
-		final int max = limit;
-		return new Iterator<Integer>() {
-
-			private int current = 0;
-
-			public boolean hasNext() {
-				return current < max;
-			}
-
-			public Integer next() {
-				if (hasNext()) {
-					return current++;   
-				} else {
-					throw new NoSuchElementException("Range reached the end");
-				}
-			}
-
-			public void remove() {
-				throw new UnsupportedOperationException("Can't remove values from a Range");
-			}
-		};
-	}
+public class Range {
 
 	/**
 	 * Este metodo realiza la distribucion de datos
